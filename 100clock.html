@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Day out of 100</h1>
+
+<p>Time:</p>
+
+<b><p id="value"></p></b> 
+
+<p> (The day is <p id="prop"></p>of the way to sunset) </p>
+
+<script>
+sunset_prev = new Date("2023-07-24T19:59-07:00");
+sunset_next = new Date("2023-07-25T19:59-07:00");
+
+now = new Date();
+
+proportion = (now - sunset_prev) / (sunset_next - sunset_prev);
+value_high = Math.floor(proportion * 100);
+value_low =Math.floor( (proportion * 100 - value_high) * 100);
+
+document.getElementById("value").innerHTML = value_high + ":" + value_low;
+document.getElementById("prop").innerHTML = proportion;
+
+
+
+</script>
+
+</body>
+</html>
